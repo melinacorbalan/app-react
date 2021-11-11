@@ -4,7 +4,7 @@
   font-family: 'Josefin Sans', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 550px 100px;
+  grid-template-rows: auto 100vh 100px;
   grid-template-areas: 
   "header"
   "main"

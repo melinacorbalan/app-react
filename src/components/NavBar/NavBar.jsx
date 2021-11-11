@@ -16,13 +16,16 @@ const NavBar = () => {
                         <a href=".">Home</a>
                     </li>
                     <li>
-                        <a href=".">Europa</a>
+                        <a href=".">Peliculas</a>
                     </li>
                     <li>
-                        <a href=".">Estados Unidos</a>
+                        <a href=".">Locaciones</a>
                     </li>
                     <li>
-                        <a href=".">Nueva Zelanda</a>
+                        <a href=".">Tours</a>
+                    </li>
+                    <li>
+                        <a href=".">Contacto</a>
                     </li>
                     <a href=".">
                         <CartWidget />

@@ -1,0 +1,44 @@
+.footer {
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: bold;
+    color: white;
+}
+
+.footer p a {
+    color: salmon !important;
+    text-decoration: none;
+}
+
+.soMeIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.somMeIcons a {
+    text-decoration: none;
+
+}
+
+.soMeIcons a img {
+    width: 2rem;
+    margin: 0 5px;
+}
+
+.soMeIcons a img:hover {
+    transform: scale(1.2);
+}
+

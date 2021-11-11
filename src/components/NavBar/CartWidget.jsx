@@ -1,15 +1,12 @@
 import ShoppingCart from '../../media/shopping-cart.png'
+import '../NavBar/NavBar.css'
 
 const CartWidget = () => {
 
-    let style = {
-        width: '2rem',
-    };
-
-
+   
     return (
         <>
-        <img className="cart-icon" src={ShoppingCart} alt="shopping cart logo" style={style} />
+        <img className="cart-icon" src={ShoppingCart} alt="shopping cart logo"/>
         </>
     )
 }

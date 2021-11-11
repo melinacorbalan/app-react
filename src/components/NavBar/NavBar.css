@@ -32,8 +32,14 @@ header {
 
 .navBar ul li {
     list-style-type: none;
-    padding: 0 1rem;
-    font-size: 1.05rem;
+    padding: 0 12px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navBar ul li:hover {
+    background-color: transparent;
+    transform: scale(1.2);
 }
 
 .navBar ul li a {
@@ -41,7 +47,8 @@ header {
     color: #ffffff;
 }
 
-.navBar ul li a:hover {
-    background-color: #e49578;
+.cart-icon {
+    width: 2rem;
 }
+
 
