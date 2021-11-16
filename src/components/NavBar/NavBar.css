@@ -3,24 +3,34 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: #a12e2e;
-    padding: 0 20px;
+    padding: 0 10px;
     grid-area: header;
+    height: 70px;
 }
 
 .title {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     color: #ffffff;
     text-shadow: 2px 2px black;
 }
 
-.title img {
-    width: 55px;
-    padding-right: 10px;
+.title h1 {
+    font-size: 30px;
+    margin: auto;
+    font-weight: initial;
+    line-height: initial;
+    padding-left: 10px;
 }
 
-.navBar ul {
+.title img {
+    width: 55px;
+    height: 55px;
+}
+
+.navBar {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -30,21 +40,16 @@ header {
     height: 100%;
 }
 
-.navBar ul li {
-    list-style-type: none;
+.navBar a {
     padding: 0 12px;
     font-size: 18px;
-    font-weight: bold;
-}
-
-.navBar ul li:hover {
-    background-color: transparent;
-    transform: scale(1.2);
-}
-
-.navBar ul li a {
     text-decoration: none;
     color: #ffffff;
+}
+
+.navBar a:hover {
+    background-color: transparent;
+    transform: scale(1.2);
 }
 
 .cart-icon {

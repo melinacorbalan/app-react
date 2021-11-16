@@ -1,23 +1,11 @@
-import './ItemListContainer.css'
-import arrow from '../../media/up-arrow-icon.png'
+import ItemList from '../Items/ItemList'
 
-const ItemListContainer = (props) => {
-
-
-    const ScrollUp = () => {
-        window.scrollTo ({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        })
-    };
-
+const ItemListContainer = () => {
 
     return (
-        <div className="main">
-            <h2 className="main-title">Descubre donde se filmaron tus peliculas favoritas!</h2>
-            <img className="arrow-up" src={arrow} alt="arrow up" onClick={ScrollUp} />
-        </div>
+        
+            <ItemList />
+        
     )
 
 }
