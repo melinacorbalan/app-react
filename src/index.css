@@ -41,6 +41,10 @@ body {
   right: 12px;
 }
 
+.none {
+  display: none;
+}
+
 /* PELICULAS PAGE */
 
 .mainPeliculas {

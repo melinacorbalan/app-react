@@ -1,9 +1,17 @@
-import arrow from '../../media/up-arrow-icon.png'
-
+import arrowImg from '../../media/up-arrow-icon.png'
 
 const Arrow = () => {
 
-    const ScrollUp = () => {
+
+    const show_arrow = () => {
+        if (document.documentElement.scrollTop > 30) {
+            console.log("HOLA");
+        } else {
+            console.log("CHAU");
+        }
+    }
+
+    const scrollUp = () => {
         window.scrollTo({
             top: 0,
             left: 0,
@@ -11,26 +19,15 @@ const Arrow = () => {
         })
     };
 
-    // ESTO LO TENÍA EN JS, ALGUNA IDEA COMO HACERLO CON RCT?
 
-
-    // const show_arrow = () => {
-    //     if (document.documentElement.scrollTop > 30) {
-    //         display block
-    //     } else {
-    //         display none
-    //     }
-    // }
-
-    // window.onscroll = function () {show_arrow()}
-
+    window.onscroll = function () { show_arrow() }
 
 
     return (
-
-        <img className="arrow-up" src={arrow} alt="arrow up" onClick={ScrollUp} />
+        <img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp} />
     )
 
 }
 
 export default Arrow
+
