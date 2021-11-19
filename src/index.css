@@ -39,6 +39,7 @@ body {
   position: fixed;
   bottom: 30px;
   right: 12px;
+  cursor: pointer;
 }
 
 .none {

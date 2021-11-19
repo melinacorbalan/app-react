@@ -1,15 +1,22 @@
+// import { useEffect, useState } from 'react';
 import arrowImg from '../../media/up-arrow-icon.png'
 
 const Arrow = () => {
 
+    // const [visible, setVisible] = useState (false);
 
-    const show_arrow = () => {
-        if (document.documentElement.scrollTop > 30) {
-            console.log("HOLA");
-        } else {
-            console.log("CHAU");
-        }
-    }
+    // const visibility = () => {
+    //     if (document.documentElement.scrollTop > 5) {
+    //         setVisible(true);
+    //     } else {
+    //         setVisible(false);
+    //     }
+    // }
+
+    // useEffect (() => {
+    //     window.addEventListener("scroll", visibility)
+    // }, []);
+
 
     const scrollUp = () => {
         window.scrollTo({
@@ -20,12 +27,14 @@ const Arrow = () => {
     };
 
 
-    window.onscroll = function () { show_arrow() }
-
 
     return (
-        <img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp} />
-    )
+        <img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp}/>
+
+        /* <div>
+        {visible && (<img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp}/>)}
+        </div> */
+    );
 
 }
 
