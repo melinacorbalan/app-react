@@ -6,6 +6,7 @@ import logo_twitter from '../../media/twitter-icon.png'
 const Footer = () => {
 
     return (
+        <>
         <footer className="footer">
             <div className="soMeIcons">
                 <a href="https://www.facebook.com">
@@ -22,6 +23,7 @@ const Footer = () => {
             <p>Realizado por <a href="https://melinacorbalan.github.io/my-portfolio/" style={{ color: 'white' }} target="_blank" rel="noopener noreferrer">Melina Corbalán</a>
             </p>
         </footer>
+        </>
     )
 }
 

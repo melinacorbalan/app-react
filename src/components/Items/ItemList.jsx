@@ -1,7 +1,7 @@
 import Item from "./Item"
 
 
-const ItemList = ({loading, products, classTours}) => {
+const ItemList = ({loading, products, classTours, children}) => {
     return (
         <div className={classTours}>
             {loading ? <h1 className="loading">Loading...</h1> :
@@ -11,6 +11,8 @@ const ItemList = ({loading, products, classTours}) => {
                     ))}
                 </div>
             }
+            {children}
+            
         </div>
     )
 }

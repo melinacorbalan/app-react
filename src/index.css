@@ -113,3 +113,29 @@ body {
 
 }
 
+.agregarCarrito {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.agregarCarrito p {
+  font-size: 1.2rem;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.808);
+  font-weight: bold;
+  width: auto;
+  min-width: 15px;
+  text-align: center;
+}
+
+.agregarCarrito .btn {
+  margin: 0 5px;
+}
+
+.agregarCarrito .btn .btn-danger {
+  height: 1rem;
+}
+
