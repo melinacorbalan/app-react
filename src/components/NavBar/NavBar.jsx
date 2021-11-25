@@ -1,7 +1,6 @@
 
-import './NavBar.css'
 import logo from '../../media/logo.png'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
 const NavBar = () => {
@@ -9,14 +8,16 @@ const NavBar = () => {
     return (
         <header>
             <div className="title">
-                <img src={logo} alt="logo branding" />
-                <h1>Un lugar de pelicula</h1>
+            <Link to="/">
+            <img src={logo} alt="logo branding" />
+            </Link>
+            <h1>Un lugar de pelicula</h1>
             </div>
             <nav className="navBar">
                 <NavLink to="/">Home</NavLink>
-                <NavLink to="/peliculas">Peliculas</NavLink>
-                <NavLink to="/locaciones">Locaciones</NavLink>
                 <NavLink to="/tours">Tours</NavLink>
+                <NavLink to="/categorias/peliculas">Peliculas</NavLink>
+                <NavLink to="/categorias/series">Series</NavLink>
                 <NavLink to="/contact">Contacto</NavLink>
                 <NavLink to="/cart">{<CartWidget />}</NavLink>
             </nav>

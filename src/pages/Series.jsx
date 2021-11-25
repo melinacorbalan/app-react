@@ -1,12 +1,10 @@
 import Arrow from "../components/Footer/Arrow"
 import Footer from "../components/Footer/Footer"
-import NavBar from "../components/NavBar/NavBar"
 
 
-const Locaciones = () => {
+const Series = () => {
     return (
         <div className="homeContainer">
-            <NavBar />
             <main className="mainLocaciones"></main>
             <Arrow />
             <Footer />
@@ -14,4 +12,4 @@ const Locaciones = () => {
     )
 }
 
-export default Locaciones
+export default Series
