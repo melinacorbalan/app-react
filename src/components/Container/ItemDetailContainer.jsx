@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GetItems from './GetItems'
+import GetItems from '../../data/GetItems'
 import ItemDetail from '../Items/ItemDetail'
 import { useParams } from "react-router";
 
@@ -19,9 +19,13 @@ const ItemDetailContainer = () => {
             .finally(() => setLoading(false));
     }, [idTour])
 
+    const onAdd = ((cant) => {
+        console.log(`Has reservado ${cant} tours para ${item.nombre}`);
+    })
+
 
     return (
-            <ItemDetail loading={loading} item={item}/>
+        <ItemDetail loading={loading} item={item} onAdd={onAdd}/>
     )
 }
 

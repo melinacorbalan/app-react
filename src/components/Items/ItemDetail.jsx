@@ -1,9 +1,10 @@
-import Button from "@restart/ui/esm/Button"
 import { Link } from "react-router-dom"
+import Arrow from "../Footer/Arrow"
+import ItemCount from "./ItemCount"
 import "./ItemDetail.css"
 
 
-const ItemDetail = ({ loading, item }) => {
+const ItemDetail = ({ loading, item, onAdd }) => {
 
 
     return (
@@ -36,12 +37,13 @@ const ItemDetail = ({ loading, item }) => {
                                 <p>Donde?: </p>
                                 <p>{item.locacion}</p>
                             </div>
-                            <Button className="button-cart">Agregar al carrito</Button>
+                            <ItemCount stock={10} onAdd={onAdd}/>
                         </div>
                         <Link to="/tours">Ver más tours</Link>
                     </section>
                 </main>
             }
+            <Arrow />
         </>
     )
 }

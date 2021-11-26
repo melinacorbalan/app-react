@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import arrowImg from '../../media/up-arrow-icon.png'
+import arrowImg from '../../assets/up-arrow-icon.png'
 
 const Arrow = () => {
 

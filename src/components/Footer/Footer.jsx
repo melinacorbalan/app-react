@@ -1,7 +1,7 @@
 import './Footer.css'
-import logo_facebook from '../../media/facebook-icon.png'
-import logo_instagram from '../../media/instagram-icon.png'
-import logo_twitter from '../../media/twitter-icon.png'
+import logo_facebook from '../../assets/facebook-icon.png'
+import logo_instagram from '../../assets/instagram-icon.png'
+import logo_twitter from '../../assets/twitter-icon.png'
 
 const Footer = () => {
 

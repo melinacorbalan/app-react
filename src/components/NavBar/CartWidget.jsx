@@ -1,4 +1,4 @@
-import ShoppingCart from '../../media/shopping-cart.png'
+import ShoppingCart from '../../assets/shopping-cart.png'
 
 const CartWidget = () => {
 

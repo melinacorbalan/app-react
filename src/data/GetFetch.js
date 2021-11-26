@@ -1,4 +1,4 @@
-import { Tours } from "../Items/Tours";
+import { Tours } from "./Tours";
 
 const GetFetch = new Promise((aceptada, rechazada) => {
     setTimeout(() => {

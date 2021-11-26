@@ -44,51 +44,51 @@
 
 /* BACKGROUND HEADER */
 #LOTR {
-    background-image: url('../../media/background/LOTR.jpeg');
+    background-image: url('../../assets/background/LOTR.jpeg');
 }
 
 #HA {
-    background-image: url('../../media/background/HA.jpeg');
+    background-image: url('../../assets/background/HA.jpeg');
 }
 
 #HP {
-    background-image: url('../../media/background/HP.jpeg');
+    background-image: url('../../assets/background/HP.jpeg');
 }
 
 #GOT {
-    background-image: url('../../media/background/GOT.jpeg');
+    background-image: url('../../assets/background/GOT.jpeg');
 }
 
 #EPL {
-    background-image: url('../../media/background/EPL.jpeg');
+    background-image: url('../../assets/background/EPL.jpeg');
 }
 
 #AM {
-    background-image: url('../../media/background/AM.jpeg');
+    background-image: url('../../assets/background/AM.jpeg');
 }
 
 #SH {
-    background-image: url('../../media/background/SH.jpeg');
+    background-image: url('../../assets/background/SH.jpeg');
 }
 
 #DA {
-    background-image: url('../../media/background/DA.jpeg');
+    background-image: url('../../assets/background/DA.jpeg');
 }
 
 #FRNDS {
-    background-image: url('../../media/background/FRNDS.jpeg');
+    background-image: url('../../assets/background/FRNDS.jpeg');
 }
 
 #TDG {
-    background-image: url('../../media/background/TDG.jpeg');
+    background-image: url('../../assets/background/TDG.jpeg');
 }
 
 #CHNBYL {
-    background-image: url('../../media/background/CHNBYL.jpeg');
+    background-image: url('../../assets/background/CHNBYL.jpeg');
 }
 
 #DARK {
-    background-image: url('../../media/background/DARK.jpeg');
+    background-image: url('../../assets/background/DARK.jpeg');
 }
 
 .main-details {
@@ -114,7 +114,7 @@
 .booking {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30% 30% 20% 20%;
+    grid-template-rows: 30% 30% 10% 30%;
     grid-template-areas:
         "button"
         "tour-details"
@@ -187,13 +187,45 @@
     margin: 0;
 }
 
-.button-cart {
+.agregarCarrito {
     grid-area: button-cart;
-    font-size: 1rem;
-    width: 50%;
-    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+
+.agregarCarrito p {
+    margin: 0;
+    font-weight: bold;
+    width: auto;
+    min-width: 20px;
+    text-align: center;
+}
+
+.operator {
+    display: flex;
+    flex-direction: row;
+    border: 1.5px solid lightgrey;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.button-op {
     background-color: #c41f1f;
+    border: transparent;
+    color: #ffffff;
+    border-radius: 5px;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.button-cart {
+    background-color: #c41f1f;
+    height: 2rem;
     color: #ffffff;
     border: transparent;
     border-radius: 5px;
+    
 }
