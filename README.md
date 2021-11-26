@@ -1,4 +1,4 @@
-# app-react
+# App - React
 Melina Corbalan - Proyecto React 2021
 
 Website Navegation: 
