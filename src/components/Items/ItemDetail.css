@@ -1,0 +1,199 @@
+/* DETAILS */
+
+.detailContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "detail-header"
+        "detail-main";
+}
+
+.header-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    grid-area: detail-header;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center !important;
+    background-size: cover !important;
+    height: 500px;
+}
+
+
+.header-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 5rem;
+    text-shadow: 5px 5px 8px black;
+}
+
+.header-description {
+    font-size: 2rem;
+    color: #ffffff;
+    padding-left: 5rem;
+    text-shadow: 5px 5px 8px black;
+}
+
+/* BACKGROUND HEADER */
+#LOTR {
+    background-image: url('../../media/background/LOTR.jpeg');
+}
+
+#HA {
+    background-image: url('../../media/background/HA.jpeg');
+}
+
+#HP {
+    background-image: url('../../media/background/HP.jpeg');
+}
+
+#GOT {
+    background-image: url('../../media/background/GOT.jpeg');
+}
+
+#EPL {
+    background-image: url('../../media/background/EPL.jpeg');
+}
+
+#AM {
+    background-image: url('../../media/background/AM.jpeg');
+}
+
+#SH {
+    background-image: url('../../media/background/SH.jpeg');
+}
+
+#DA {
+    background-image: url('../../media/background/DA.jpeg');
+}
+
+#FRNDS {
+    background-image: url('../../media/background/FRNDS.jpeg');
+}
+
+#TDG {
+    background-image: url('../../media/background/TDG.jpeg');
+}
+
+#CHNBYL {
+    background-image: url('../../media/background/CHNBYL.jpeg');
+}
+
+#DARK {
+    background-image: url('../../media/background/DARK.jpeg');
+}
+
+.main-details {
+    grid-area: detail-main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-details h3 {
+    text-transform: uppercase;
+    color: gray;
+    padding: 2rem;
+}
+
+.main-details a {
+    text-decoration: none;
+    color: #c41f1f;
+    font-size: 2rem;
+    margin: 4rem;
+}
+
+.booking {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 30% 20% 20%;
+    grid-template-areas:
+        "button"
+        "tour-details"
+        "location"
+        "button-cart";
+    align-items: center;
+    justify-items: center;
+    width: 300px;
+    height: 300px;
+    box-shadow: 1px 1px 10px 3px lightgrey;
+}
+
+.button-reserva {
+    grid-area: button;
+    background-color: #c41f1f;
+    color: #ffffff;
+    font-size: 1.8rem;
+    width: 90%;
+    height: 4rem;
+    border: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tour-details {
+    grid-area: tour-details;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
+    line-height: 1rem;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    border-right: 1px solid #adadad;
+    line-height: 1.5rem;
+}
+
+.main-text p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.sub-text {
+    color: gray;
+    font-size: 0.85rem;
+}
+
+#price {
+    border-right: none;
+}
+
+.location {
+    grid-area: location;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.location p {
+    margin: 0;
+}
+
+.button-cart {
+    grid-area: button-cart;
+    font-size: 1rem;
+    width: 50%;
+    height: 2.5rem;
+    background-color: #c41f1f;
+    color: #ffffff;
+    border: transparent;
+    border-radius: 5px;
+}

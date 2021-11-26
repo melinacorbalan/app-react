@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import Arrow from "../components/Footer/Arrow"
-import Footer from "../components/Footer/Footer"
 
 const Cart = () => {
     return (
@@ -10,7 +9,6 @@ const Cart = () => {
                 <p>Realiza tu compra <Link to='/tours'>aquí</Link></p>
             </main>
             <Arrow />
-            <Footer />
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import Arrow from "../components/Footer/Arrow"
-import Footer from "../components/Footer/Footer"
 
 
 const Series = () => {
@@ -7,7 +6,6 @@ const Series = () => {
         <div className="homeContainer">
             <main className="mainLocaciones"></main>
             <Arrow />
-            <Footer />
         </div>
     )
 }

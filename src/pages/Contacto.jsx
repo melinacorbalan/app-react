@@ -1,5 +1,4 @@
 import Arrow from "../components/Footer/Arrow"
-import Footer from "../components/Footer/Footer"
 import Form from "../components/Form/Form"
 
 
@@ -8,7 +7,6 @@ const Contacto = () => {
         <div className="homeContainer">
             <Form />
             <Arrow />
-            <Footer />
         </div>
     )
 }

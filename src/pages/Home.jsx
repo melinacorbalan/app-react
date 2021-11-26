@@ -1,5 +1,4 @@
 import Arrow from "../components/Footer/Arrow"
-import Footer from "../components/Footer/Footer"
 
 
 
@@ -12,7 +11,6 @@ const Home = ({ greeting }) => {
                 <h2 className="mainHomeTitle">{greeting}</h2>
             </div>
             <Arrow />
-            <Footer />
         </div>
     )
 }
