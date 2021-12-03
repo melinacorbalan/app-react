@@ -19,13 +19,12 @@ const ItemDetailContainer = () => {
             .finally(() => setLoading(false));
     }, [idTour])
 
-    const onAdd = ((cant) => {
-        console.log(`Has reservado ${cant} tours para ${item.nombre}`);
-    })
+
+    
 
 
     return (
-        <ItemDetail loading={loading} item={item} onAdd={onAdd}/>
+        <ItemDetail loading={loading} item={item}/>
     )
 }
 

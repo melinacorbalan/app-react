@@ -40,7 +40,7 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <ItemList loading={loading} products={products} classTours="mainTours"/>
+            <ItemList loading={loading} products={products}/>
         </>
     )
 

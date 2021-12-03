@@ -1,11 +1,34 @@
+import Button from "@restart/ui/esm/Button"
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useCartContext } from "../../context/cartContext"
 import Arrow from "../Footer/Arrow"
 import ItemCount from "./ItemCount"
 import "./ItemDetail.css"
 
+const CartButton = () => {
+    return (
+        <Link to="/cart">
+            <Button className="button-cart">Finalizar compra</Button>
+        </Link>
+    )
+}
 
-const ItemDetail = ({ loading, item, onAdd }) => {
+const ItemDetail = ({ loading, item }) => {
 
+    const {setCount, count, addItem } = useCartContext()
+    const [button, setButton] = useState('countButton')
+    const [date, setDate] = useState('noDate')
+
+    const newDate = (input) => {
+        setDate(input.target.value)
+    }
+
+    const onAdd = (() => {
+        addItem({ id: item.ID, tour: item, cantidad: count, fecha: date, total: count*item.precio})
+        setButton('cartButton')
+        setCount(1)
+    })
 
     return (
         <>
@@ -37,9 +60,12 @@ const ItemDetail = ({ loading, item, onAdd }) => {
                                 <p>Donde?: </p>
                                 <p>{item.locacion}</p>
                             </div>
-                            <ItemCount stock={10} onAdd={onAdd}/>
+                            {button === 'countButton' ?
+                                <ItemCount stock={10} onAdd={onAdd} newDate={newDate} date={date}/> :
+                                <CartButton />
+                            }
                         </div>
-                        <Link to="/tours">Ver más tours</Link>
+                        <Link to="/tours" className="back-tours">Ver más tours</Link>
                     </section>
                 </main>
             }

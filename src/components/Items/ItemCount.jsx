@@ -1,9 +1,9 @@
-import Button from "@restart/ui/esm/Button"
-import { useState } from "react"
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { useCartContext } from '../../context/cartContext'
 
-const ItemCount = ({ stock, onAdd }) => {
+const ItemCount = ({ stock, onAdd, newDate, date }) => {
 
-    const [count, setCount] = useState(1)
+    const { count, setCount } = useCartContext()
 
     const Sumar = () => {
         if (count < stock) {
@@ -17,22 +17,29 @@ const ItemCount = ({ stock, onAdd }) => {
         }
     }
 
-    const Agregar = () => {
-        onAdd(count)
-        setCount(1)
-    }
-
     return (
-
         <div className="agregarCarrito">
-            <div className="operator">
-                <Button onClick={Sumar} className="button-op">+</Button>
-                <p>{count}</p>
-                <Button onClick={Restar} className="button-op">-</Button>
-            </div>
             <div>
-                <Button onClick={Agregar} className="button-cart">Agregar al carrito</Button>
+                <label>Fecha: </label> <input type="date" onChange={newDate} />
             </div>
+            <div className="operator">
+                <button onClick={Sumar} className="button-op">+</button>
+                <p>{count}</p>
+                <button onClick={Restar} className="button-op">-</button>
+            </div>
+            {date !== 'noDate' ?
+                <button className="button-cart" onClick={onAdd}>Agregar al carrito</button>
+                :
+                <div>
+                    <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip-disabled">Selecciona una fecha</Tooltip>}>
+                        <span className="d-inline-block">
+                            <button className="button-cart" disabled style={{ pointerEvents: 'none' }}>
+                            Agregar al carrito
+                            </button>
+                        </span>
+                    </OverlayTrigger>
+                </div>
+            }
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import Item from "./Item"
 
 
-const ItemList = ({loading, products, classTours, children}) => {
+const ItemList = ({loading, products}) => {
     return (
-        <div className={classTours}>
+        <div className="mainTours">
             {loading ? <h1 className="loading">Loading...</h1> :
                 <div className="tours">
                     {products.map((item) => (
@@ -11,7 +11,6 @@ const ItemList = ({loading, products, classTours, children}) => {
                     ))}
                 </div>
             }
-            {children}
             
         </div>
     )
