@@ -7,7 +7,7 @@ const Item = ({item}) => {
             <div className="card-body">
                 <h5 className="card-title">{item.nombre} en {item.locacion}</h5>
                 {/* <p className="card-text">{item.descripcion}</p> */}
-                <Link to={`/detalle/${item.ID}`} className="btn btn-primary align-content-center">Detalles del tour</Link>
+                <Link to={`/detalle/${item.id}`} className="btn btn-primary align-content-center">Detalles del tour</Link>
             </div>
         </div>
     )

@@ -24,10 +24,14 @@ const CartContextProvider = ({ children }) => {
         setCartList([...newCartList])
     }
 
+    const emptyCart = () => {
+        setCartList([])
     
+    }
+
 
     return (
-        <CartContext.Provider value={{ cartList, addItem, count, setCount, deleteItem }}>
+        <CartContext.Provider value={{ cartList, addItem, count, setCount, deleteItem, emptyCart }}>
             {children}
         </CartContext.Provider>
     )

@@ -5,8 +5,7 @@ import { Total } from "../data/Price";
 
 const Cart = () => {
 
-    const { cartList, deleteItem } = useCartContext();
- 
+    const { cartList, deleteItem, emptyCart } = useCartContext();
     
 
     return (
@@ -18,7 +17,7 @@ const Cart = () => {
                         {cartList.map(e =>
                             <div key={e.id} className="carrito-tour">
                                 <div className="detalles-tour">
-                                    <p className="tour-name">{e.tour.nombre} Tour en {e.tour.locacion}</p>
+                                    <Link to={`/detalle/${e.id}`} className="tour-name">{e.tour.nombre} Tour en {e.tour.locacion}</Link>
                                     <p className="detail">{e.fecha} {e.tour.horario} ({e.tour.idioma})</p>
                                     <p className="total-tour">{e.cantidad} x tickets = {e.total} EUR</p>
                                 </div>
@@ -30,7 +29,7 @@ const Cart = () => {
                         <Total />
                     </div>
                     <section className="confirm">
-                        <button className="btn btn-danger">Confirmar compra</button>
+                        <button className="btn btn-danger" onClick={emptyCart}>Confirmar compra</button>
                     </section>
                 </main>
                 :

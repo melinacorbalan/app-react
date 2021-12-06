@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import ItemList from "../Items/ItemList";
-import GetFetch from "../../data/GetFetch";
 import { useParams } from "react-router";
-
+import db from "../../Firebase/firebase";
+import { collection, getDocs, query, where } from "@firebase/firestore";
 
 
 
@@ -13,34 +13,35 @@ const ItemListContainer = () => {
 
     const { idCategoria } = useParams();
 
-
-
     useEffect(() => {
 
-        if (idCategoria) {
-            GetFetch.then(
-                (data) => {
-                    setProducts(data.filter(item => item.categoria === idCategoria));
-                },
-                (error) => console.log(error))
-                .finally(() => setLoading(false));
-        } else {
-            GetFetch.then(
-                (data) => {
-                    setProducts(data);
-                },
-                (error) => console.log(error)
-            )
-                .finally(() => setLoading(false));
+        const itemsCollection = collection(db, "tours")
+        const getItems = async () => {
+
+
+            if (idCategoria) {
+
+                const q = query((itemsCollection), where("categoria", "==", idCategoria));
+                const querySnapshot = await getDocs(query(q))
+                setProducts(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+                setLoading(false)
+
+            } else {
+
+                const querySnapshot = await getDocs(itemsCollection)
+                setProducts(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+                setLoading(false)
+            }
+
         }
 
-    }, [idCategoria]);
-
+        getItems()
     
+    }, [idCategoria]);
 
     return (
         <>
-            <ItemList loading={loading} products={products}/>
+            <ItemList loading={loading} products={products} />
         </>
     )
 

@@ -25,7 +25,7 @@ const ItemDetail = ({ loading, item }) => {
     }
 
     const onAdd = (() => {
-        addItem({ id: item.ID, tour: item, cantidad: count, fecha: date, total: count*item.precio})
+        addItem({ id: item.id, tour: item, cantidad: count, fecha: date, total: count*item.precio})
         setButton('cartButton')
         setCount(1)
     })
@@ -34,7 +34,7 @@ const ItemDetail = ({ loading, item }) => {
         <>
             {loading ? <h1 className="loading">Loading...</h1> :
                 <main className="detailContainer">
-                    <section id={item.ID} className="header-details">
+                    <section id={`id-${item.id}`} className="header-details">
                         <h1 className="header-title">{item.nombre}</h1>
                         <p className="header-description">{item.descripcion}</p>
                     </section>

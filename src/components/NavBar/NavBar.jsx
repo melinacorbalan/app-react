@@ -2,8 +2,12 @@
 import logo from '../../assets/logo.png'
 import { Link, NavLink } from 'react-router-dom'
 import CartWidget from './CartWidget'
+import { useCartContext } from '../../context/cartContext'
+import { Badge } from 'react-bootstrap'
 
 const NavBar = () => {
+
+    const {cartList} = useCartContext()
 
     return (
         <header>
@@ -20,6 +24,7 @@ const NavBar = () => {
                 <NavLink to="/categorias/series">Series</NavLink>
                 <NavLink to="/contact">Contacto</NavLink>
                 <NavLink to="/cart">{<CartWidget />}</NavLink>
+                {cartList.length>0 && <Badge bg="warning">{cartList.length}</Badge>}
             </nav>
         </header>
 

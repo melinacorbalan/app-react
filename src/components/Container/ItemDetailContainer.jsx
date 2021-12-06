@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
-import GetItems from '../../data/GetItems'
+import {useEffect, useState } from "react";
 import ItemDetail from '../Items/ItemDetail'
 import { useParams } from "react-router";
+import db from "../../Firebase/firebase";
+import { doc, getDoc } from "@firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -11,20 +12,25 @@ const ItemDetailContainer = () => {
     const { idTour } = useParams();
 
     useEffect(() => {
-        GetItems.then(
-            (data) => {
-                const id = data.find(item => item.ID === idTour);
-                setItem(id)
-            }, (error) => console.log(error))
-            .finally(() => setLoading(false));
+
+        const getItem = async () => {
+
+            if (idTour) {
+                const docRef = doc(db, "tours", idTour);
+                const docSnap = await getDoc(docRef);
+                setItem({id: docSnap.id, ...docSnap.data()})
+                setLoading(false)
+            }
+
+        }
+
+        getItem()
+
+
     }, [idTour])
 
-
-    
-
-
     return (
-        <ItemDetail loading={loading} item={item}/>
+        <ItemDetail loading={loading} item={item} />
     )
 }
 
