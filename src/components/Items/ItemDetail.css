@@ -23,22 +23,22 @@
     background-repeat: no-repeat;
     background-position: center !important;
     background-size: cover !important;
-    height: 500px;
+    height: 300px;
 }
 
 
 .header-title {
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #ffffff;
-    padding-left: 5rem;
+    padding-left: 2rem;
     text-shadow: 5px 5px 8px black;
 }
 
 .header-description {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #ffffff;
-    padding-left: 5rem;
+    padding-left: 2rem;
     text-shadow: 5px 5px 8px black;
 }
 
@@ -102,12 +102,13 @@
     text-transform: uppercase;
     color: gray;
     padding: 2rem;
+    font-size: 1rem;
 }
 
 .back-tours {
     text-decoration: none;
     color: #c41f1f;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 4rem;
 }
 

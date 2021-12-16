@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import Arrow from "../components/Footer/Arrow"
 import { useCartContext } from "../context/cartContext";
-import { Total } from "../data/Price";
+import Button from 'react-bootstrap/Button'
+
 
 const Cart = () => {
 
-    const { cartList, deleteItem, emptyCart } = useCartContext();
-    
+    const { cartList, deleteItem, emptyCart, totalPrice } = useCartContext();
+
 
     return (
         <>
@@ -26,10 +27,13 @@ const Cart = () => {
                                 </div>
                             </div>
                         )}
-                        <Total />
+                        <p className="valor-total">Precio total: {totalPrice} EUR</p>
                     </div>
-                    <section className="confirm">
-                        <button className="btn btn-danger" onClick={emptyCart}>Confirmar compra</button>
+                    <section className="confirm-user">
+                        <Button variant="secondary" onClick={emptyCart}>Cancelar compra</Button>
+                        <Link to="/checkout">
+                        <Button variant="danger" id="confirm-cart">Confirmar compra</Button>
+                        </Link>
                     </section>
                 </main>
                 :

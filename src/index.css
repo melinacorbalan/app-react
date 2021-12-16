@@ -1,9 +1,17 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+
+
 
 
 /* HEADER */
@@ -13,7 +21,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   background-color: #a12e2e;
-  padding: 0 10px;
   height: 70px;
 }
 
@@ -27,48 +34,51 @@ header {
 }
 
 .title h1 {
-  font-size: 30px;
+  font-size: 20px;
   margin: auto;
   font-weight: initial;
   line-height: initial;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .title img {
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
 }
 
-.navBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+.navbar {
+  margin: 10px 10px;
+  display: block;
+  padding: 5px;
 }
 
-.navBar a {
+.navbar button {
+  background-color: #ffffff99;
+}
+
+.navbar-collapse {
+  margin-top: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+
+.navbar-nav a {
   padding: 0 12px;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
-  color: #ffffff;
-}
-
-.navBar a:hover {
-  background-color: transparent;
-  transform: scale(1.2);
+  color: #000000;
 }
 
 
 .cart-icon {
-  width: 2rem;
+  width: 1.5rem;
+  background-color: black;
 }
 
 .badge {
   position: absolute;
-  top: 10px;
+  top: 160px;
+  right: 25px;
 }
 
 
@@ -77,10 +87,11 @@ header {
 .homeContainer {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 100vh;
+  grid-template-rows: auto 500px;
   grid-template-areas:
     "title"
-    "main";
+    "main"
+    "footer";
 }
 
 .mainHome {
@@ -95,23 +106,17 @@ header {
 }
 
 .mainHomeTitle {
-  font-size: 2rem;
+  font-size: 1.2rem;
   margin-top: 10rem;
   background-color: white;
   line-height: 1.5;
+  text-align: center;
 }
 
 .arrow-up {
-  width: 3rem;
-  position: fixed;
-  bottom: 30px;
-  right: 12px;
-  cursor: pointer;
-}
-
-.none {
   display: none;
 }
+
 
 
 
@@ -136,7 +141,7 @@ header {
 .loading {
   color: black;
   text-shadow: 2px 2px 1px white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   height: 100vh;
   text-align: center;
   margin-top: 20px;
@@ -151,7 +156,7 @@ header {
 }
 
 .card {
-  width: 20rem;
+  width: 16rem;
   margin: 1rem;
   border: 2px solid transparent;
   border-radius: 0.5rem;
@@ -195,7 +200,6 @@ header {
 
 .form-contacto fieldset {
   margin: 10px;
-  width: 500px;
 }
 
 .form-label {
@@ -213,29 +217,24 @@ header {
 /* CART PAGE */
 
 .mainCart {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "cart-title"
-    "detalle"
-    "confirmar";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
 }
 
 .mainCart h1 {
-  grid-area: cart-title;
   height: fit-content;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: left;
-  margin: 50px 150px;
+  margin: 50px 10px;
   border-bottom: 1px solid lightgrey;
-  justify-self: stretch;
 }
 
 .empty-cart {
   height: 500px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -249,22 +248,15 @@ header {
 
 
 .detalle-carrito {
-  grid-area: detalle;
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .carrito-tour {
-  margin: 0 150px 50px 150px;
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: auto;
-  grid-template-areas: "description delete";
-  align-items: center;
-}
-
-.detalles-tour {
-  grid-area: description;
+  margin: 0 10px 50px 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .tour-name {
@@ -287,22 +279,218 @@ header {
 }
 
 .button-delete {
-  grid-area: delete;
-  justify-self: center;
+  margin-top: 10px;
 }
 
 .valor-total {
-  margin: 0 150px;
   font-size: 1.2rem;
   padding-top: 20px;
+  margin-left: 10px;
   border-top: 1px solid lightgray;
 }
 
-.confirm {
-  margin: 50px 150px;
-  grid-area: confirmar;
-  height: 250px;
+.confirm-user {
+  margin: 50px 0 50px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.confirm-user button {
+  font-size: 0.8rem;
+}
+
+#confirm-cart {
+  margin-left: 5px;
+}
+
+/* // CHECKOUT //  */
+
+.none {
+  display: none;
+}
+
+.checkout-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.back-cart {
+  font-size: 1.2rem;
+  margin: 10px;
+  color: black;
+  text-align: right;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+.checkout-cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: beige;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.checkout-cart img {
+  width: 100px;
+  margin-left: 10px;
+}
+
+.checkout-detalle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 0;
+  grid-area: column1;
+}
+
+.buyer-form {
+  margin: 50px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.col-1,
+.col-2 {
+  width: 100%;
+}
+
+.col-1 label,
+.col-2 label {
+  margin-right: 10px;
+  display: block;
+}
+
+.col-1 input,
+.col-2 input,
+.col-2 select {
+  width: 15rem;
+  margin-bottom: 15px;
+  height: 2rem;
+}
+
+.subscription {
+  display: flex;
+  flex-direction: row;
+  grid-area: subs;
+  gap: 5px;
+  font-size: 0.8rem;
   align-items: center;
 }
+
+.select-payment {
+  margin-top: 20px;
+}
+
+.payment-options {
+  grid-area: payment;
+  justify-self: center;
+  margin-left: 10px;
+  width: 300px;
+  scroll-behavior: smooth;
+
+}
+
+
+.form-payment {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-header {
+  border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.accordion-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-color: gray;
+}
+
+.accordion-button::after {
+  display: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: white;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  font-size: 0.7rem;
+}
+
+.label-card {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+}
+
+.container-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-icons i {
+  padding: 0 0.2rem;
+    font-size: 1rem;
+}
+
+.fa-cc-visa {
+  color: #000080;
+}
+
+.fa-cc-mastercard {
+  color: #ff0000;
+}
+
+.fa-cc-amex {
+  color: #2E77BB;
+}
+
+.pp-logo {
+  width: 5rem;
+  border-radius: 0.5rem;
+}
+
+.card-details label {
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.card-details input {
+  margin-bottom: 0.3rem;
+}
+
+.btn-finish {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

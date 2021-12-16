@@ -30,6 +30,7 @@ const ItemDetail = ({ loading, item }) => {
         setCount(1)
     })
 
+
     return (
         <>
             {loading ? <h1 className="loading">Loading...</h1> :
