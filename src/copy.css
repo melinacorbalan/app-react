@@ -312,6 +312,8 @@ body {
   .confirm-user button {
     margin: 0 10px;
   }
+
+  /* CHECKOUT PAGE */
   
   .checkout-container {
     height: 100vh;

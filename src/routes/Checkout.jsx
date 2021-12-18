@@ -1,10 +1,12 @@
-import Button from 'react-bootstrap/Button';
-import React, { useState } from 'react'
-import { Form, Image } from 'react-bootstrap';
+import Button from '@restart/ui/esm/Button';
+import React, { useEffect, useState } from 'react'
+import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Arrow from '../components/Footer/Arrow';
 import Payment from '../components/helpers/Payment';
 import { useCartContext } from '../context/cartContext';
+
+const URL = "https://restcountries.com/v2/all?fields=name";
 
 const Checkout = () => {
 
@@ -14,7 +16,25 @@ const Checkout = () => {
     const [buyerEmail, setBuyerEmail] = useState('')
     const [buyerCountry, setBuyerCountry] = useState('')
     const [showPaymentOp, setShowPaymentOp] = useState(false)
-    const [style, setStyle] = useState('checkout-container')
+    const [style, setStyle] = useState('checkout-container');
+    const [country, setCountry] = useState([])
+    const [email, setEmail] = useState('')
+
+    const buttonPayment = (e) => {
+        e.preventDefault()
+        setShowPaymentOp(!showPaymentOp)
+    }
+
+    useEffect(() => {
+        fetch(URL)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setCountry(result)
+                }
+            )
+    }, [])
+
 
     const changeStyle = () => {
         setStyle('none')
@@ -56,47 +76,51 @@ const Checkout = () => {
         <>
             <div className={style}>
                 <Link to="/cart" className="back-cart">Volver a carrito</Link>
-                <div className="details-container">
+                <div className="checkout-details-container">
                     {cartList.map(e =>
                         <div key={e.id} className="checkout-cart">
                             <Image src={e.tour.image} />
-                            <div className="checkout-detalle">
-                                <h3 className="tour-name">{e.tour.nombre} en {e.tour.locacion}</h3>
-                                <p className="detail">{e.fecha} {e.tour.horario} ({e.tour.idioma}) x {e.cantidad}</p>
+                            <div className="checkout-detail">
+                                <h3 className="checkout-tour-name">{e.tour.nombre} en {e.tour.locacion}</h3>
+                                <p className="checkout-tour-detail">{e.fecha} {e.tour.horario} ({e.tour.idioma}) x {e.cantidad}</p>
                             </div>
                         </div>
 
                     )}
                 </div>
 
-                <Form className="buyer-form" onSubmit={createOrder}>
-                    <div className="col-1">
+                <form className="buyer-form" onSubmit={buttonPayment}>
+                    <div className="col-1" id="buyer-name">
                         <label htmlFor="nombre">Nombre: </label>
-                        <input type="text" name="nombre" onChange={event => setBuyerName(event.target.value)} />
+                        <input type="text" name="nombre" onChange={event => setBuyerName(event.target.value)} placeholder="Juan" required />
                     </div>
 
-                    <div className="col-2">
+                    <div className="col-2" id="buyer-surname">
                         <label htmlFor="apellido">Apellido: </label>
-                        <input type="text" name="apellido" onChange={event => setBuyerSurname(event.target.value)} />
+                        <input type="text" name="apellido" onChange={event => setBuyerSurname(event.target.value)} placeholder="Perez" required />
                     </div>
 
-                    <div className="col-1">
+                    <div className="col-1" id="buyer-email">
                         <label htmlFor="email">Correo electrónico: </label>
-                        <input type="email" name="email" onChange={event => setBuyerEmail(event.target.value)} />
+                        <input type="email" name="email" onChange={event => setBuyerEmail(event.target.value)} placeholder="juan@ejemplo.com" required />
                     </div>
 
-                    <div className="col-2">
+                    <div className="col-2" id="buyer-re-email">
                         <label htmlFor="email">Repite correo electrónico: </label>
-                        <input type="email" name="email" />
+                        <input type="email" name="email" placeholder="juan@ejemplo.com" onChange={event => setEmail(event.target.value)} required />
                     </div>
 
-                    <div className="col-1">
+                    <div className="col-1" id="buyer-country">
                         <label htmlFor="pais">País de residencia: </label>
-                        <input type="text" name="pais" onChange={event => setBuyerCountry(event.target.value)} />
+                        <select onChange={event => setBuyerCountry(event.target.value)} >
+                            {country.map(e =>
+                                <option key={e.name}>{e.name}</option>
+                            )}
+                        </select>
                     </div>
 
 
-                    <div className="col-2">
+                    <div className="col-2" id="buyer-source">
                         <label htmlFor="source" >Como nos conociste: </label>
                         <select id="source" name="source">
                             <option></option>
@@ -114,22 +138,32 @@ const Checkout = () => {
                     </div>
 
                     <div className="select-payment">
-                        <Button variant="secondary" size="sm" onClick={() => setShowPaymentOp(!showPaymentOp)}>Elegir método de pago</Button>
+                        {(email.length > 1 && buyerEmail === email) ?
+                            <input type="submit" className="btn btn-sm btn-danger" value="Elegir método de pago" /> :
+                            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip-disabled">Completa todos los campos</Tooltip>}>
+                                <span className="d-inline-block">
+                                    <Button className="btn btn-sm btn-warning" disabled style={{ pointerEvents: 'none' }}>
+                                    Elegir método de pago
+                                    </Button>
+                                </span>
+                            </OverlayTrigger>
+                        }
                     </div>
-                </Form>
+                </form>
                 {(showPaymentOp) &&
                     <section className="payment-options">
-                        <Payment totalPrice={totalPrice} createOrder={createOrder} changeStyle={changeStyle}/>
+                        <Payment totalPrice={totalPrice} createOrder={createOrder} changeStyle={changeStyle} />
                     </section>
                 }
             </div>
-            {(style==='none') &&
-            <div className="order-confirm">
-                <h3>Muchas gracias por tu compra!</h3>
-                <p>Por favor presenta el código QR antes de comenzar el tour</p>
-                <img src="https://qrtag.net/api/qr_8.png" alt="qrtag" />
-            </div>
-
+            {(style === 'none') &&
+                <div className="order-confirm">
+                    <h3>Muchas gracias por tu compra!</h3>
+                    <p>Por favor presenta el código QR antes de comenzar el tour</p>
+                    <img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fgithub.com%2Fmelinacorbalan&amp;qzone=1&amp;margin=0&amp;size=200x200&amp;ecc=L" alt="qr code" />
+                    <p>Ticket code:</p>
+                </div>
+                    
             }
             <Arrow />
         </>

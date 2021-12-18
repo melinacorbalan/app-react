@@ -18,7 +18,7 @@ const NavBar = () => {
                 <h1>Un lugar de pelicula</h1>
             </div>
 
-            <Navbar collapseOnSelect sticky="top" expand='sm'>
+            <Navbar collapseOnSelect sticky="top" expand='md'>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                 <Navbar.Collapse id='responsive-navbar-nav'>
                 <Container>

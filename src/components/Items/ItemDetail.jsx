@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/cartContext"
 import Arrow from "../Footer/Arrow"
 import ItemCount from "./ItemCount"
-import "./ItemDetail.css"
 
 const CartButton = () => {
     return (
