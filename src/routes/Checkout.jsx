@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Arrow from '../components/Footer/Arrow';
 import Payment from '../components/helpers/Payment';
 import { useCartContext } from '../context/cartContext';
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import db from '../Firebase/firebase';
 
 const URL = "https://restcountries.com/v2/all?fields=name";
 
@@ -19,6 +21,7 @@ const Checkout = () => {
     const [style, setStyle] = useState('checkout-container');
     const [country, setCountry] = useState([])
     const [email, setEmail] = useState('')
+    const [orderID, setOrderID] = useState('')
 
     const buttonPayment = (e) => {
         e.preventDefault()
@@ -33,6 +36,7 @@ const Checkout = () => {
                     setCountry(result)
                 }
             )
+        return () => setCountry([])
     }, [])
 
 
@@ -40,9 +44,10 @@ const Checkout = () => {
         setStyle('none')
     }
 
-    const createOrder = () => {
+    const createOrder = async () => {
+
         const order = {}
-        // order.date = firebase.firestore.Timestamp.fromDate(new Date());
+        order.date = Timestamp.fromDate(new Date());
 
         order.buyer =
         {
@@ -63,12 +68,10 @@ const Checkout = () => {
             return { id, nombre, locacion, cantidad }
         })
 
-        console.log(order)
 
-
-        // db.collection('orders').add(order)
-        // .then (resp => console.log(resp))
-
+        // Add a new document with a generated id.
+        const addOrder = await addDoc(collection(db, "orders"), order)
+        setOrderID(addOrder.id)        
     }
 
 
@@ -111,10 +114,10 @@ const Checkout = () => {
                     </div>
 
                     <div className="col-1" id="buyer-country">
-                        <label htmlFor="pais">País de residencia: </label>
-                        <select onChange={event => setBuyerCountry(event.target.value)} >
+                        <label htmlFor="country">País de residencia: </label>
+                        <select name="country" onChange={event => setBuyerCountry(event.target.value)} required>
                             {country.map(e =>
-                                <option key={e.name}>{e.name}</option>
+                                <option key={e.name} value={e.name}>{e.name}</option>
                             )}
                         </select>
                     </div>
@@ -143,7 +146,7 @@ const Checkout = () => {
                             <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip-disabled">Completa todos los campos</Tooltip>}>
                                 <span className="d-inline-block">
                                     <Button className="btn btn-sm btn-warning" disabled style={{ pointerEvents: 'none' }}>
-                                    Elegir método de pago
+                                        Elegir método de pago
                                     </Button>
                                 </span>
                             </OverlayTrigger>
@@ -158,12 +161,12 @@ const Checkout = () => {
             </div>
             {(style === 'none') &&
                 <div className="order-confirm">
-                    <h3>Muchas gracias por tu compra!</h3>
+                    <h3>Muchas gracias por tu compra, {buyerName}!</h3>
                     <p>Por favor presenta el código QR antes de comenzar el tour</p>
                     <img src="http://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fgithub.com%2Fmelinacorbalan&amp;qzone=1&amp;margin=0&amp;size=200x200&amp;ecc=L" alt="qr code" />
-                    <p>Ticket code:</p>
+                    <p>Ticket code: {orderID}</p>
                 </div>
-                    
+
             }
             <Arrow />
         </>
