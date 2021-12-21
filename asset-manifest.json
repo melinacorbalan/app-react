@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/unlugardepelicula/static/css/main.6ed6174e.chunk.css",
+    "main.js": "/unlugardepelicula/static/js/main.345c81bc.chunk.js",
+    "main.js.map": "/unlugardepelicula/static/js/main.345c81bc.chunk.js.map",
+    "runtime-main.js": "/unlugardepelicula/static/js/runtime-main.f879e48d.js",
+    "runtime-main.js.map": "/unlugardepelicula/static/js/runtime-main.f879e48d.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/unlugardepelicula/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.6a7d0a87.chunk.js": "/unlugardepelicula/static/js/2.6a7d0a87.chunk.js",
+    "static/js/2.6a7d0a87.chunk.js.map": "/unlugardepelicula/static/js/2.6a7d0a87.chunk.js.map",
+    "index.html": "/unlugardepelicula/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/unlugardepelicula/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.6ed6174e.chunk.css.map": "/unlugardepelicula/static/css/main.6ed6174e.chunk.css.map",
+    "static/js/2.6a7d0a87.chunk.js.LICENSE.txt": "/unlugardepelicula/static/js/2.6a7d0a87.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/unlugardepelicula/static/media/hollywood-cover-home.6b1d0b61.webp",
+    "static/media/instagram-icon.87a5e850.png": "/unlugardepelicula/static/media/instagram-icon.87a5e850.png",
+    "static/media/logo.aadab8ab.png": "/unlugardepelicula/static/media/logo.aadab8ab.png",
+    "static/media/shopping-cart.acb2e96c.png": "/unlugardepelicula/static/media/shopping-cart.acb2e96c.png",
+    "static/media/twitter-icon.f537f894.png": "/unlugardepelicula/static/media/twitter-icon.f537f894.png",
+    "static/media/up-arrow-icon.e63a85a6.png": "/unlugardepelicula/static/media/up-arrow-icon.e63a85a6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f879e48d.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.6a7d0a87.chunk.js",
+    "static/css/main.6ed6174e.chunk.css",
+    "static/js/main.345c81bc.chunk.js"
+  ]
+}
