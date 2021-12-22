@@ -76,6 +76,7 @@ header {
   position: relative;
   top: -25px;
   right: -20px;
+  width: 1.5rem;
 }
 
 
@@ -208,6 +209,7 @@ header {
   font-size: 1.2rem;
   color: #ffffff;
   padding-left: 2rem;
+  padding-right: 1rem;
   text-shadow: 5px 5px 8px black;
 }
 
@@ -954,6 +956,7 @@ header {
     font-size: 2rem;
     padding-left: 5rem;
   }
+
 
   /* CONTACT PAGE */
 

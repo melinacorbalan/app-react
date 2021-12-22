@@ -12,7 +12,7 @@ const NavBar = () => {
     return (
         <header>
             <div className="title">
-                <Link to="/">
+                <Link to="/unlugardepelicula">
                     <img src={logo} alt="logo branding" />
                 </Link>
                 <h1>Un lugar de pelicula</h1>
@@ -23,7 +23,7 @@ const NavBar = () => {
                 <Navbar.Collapse id='responsive-navbar-nav'>
                 <Container>
                     <Nav id="navBar">
-                        <Nav.Link as={Link} to="/" eventKey="home" >Home</Nav.Link>
+                        <Nav.Link as={Link} to="/unlugardepelicula" eventKey="home" >Home</Nav.Link>
                         <Nav.Link as={Link} to="/tours" eventKey="tours">Tours</Nav.Link>
                         <Nav.Link as={Link} to="/categorias/peliculas" eventKey="peliculas">Peliculas</Nav.Link>
                         <Nav.Link as={Link} to="/categorias/series" eventKey="series">Series</Nav.Link>

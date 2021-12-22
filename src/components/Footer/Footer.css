@@ -5,13 +5,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 100px;
     grid-area: footer;
 }
 
 .footer p {
     margin: 0;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.5;
     font-weight: bold;
     color: white;
@@ -31,15 +31,34 @@
 
 .somMeIcons a {
     text-decoration: none;
-
 }
 
 .soMeIcons a img {
-    width: 2rem;
+    width: 1.3rem;
     margin: 0 5px;
 }
 
-.soMeIcons a img:hover {
-    transform: scale(1.2);
+@media only screen and (min-width: 576px) {
+
+
+    .footer {
+        height: 120px;
+    }
+
+    .footer p {
+        font-size: 15px;
+    }
+
+    .soMeIcons a img {
+        width: 2rem;
+    }
+
+
 }
 
+@media only screen and (min-width: 992px) {
+
+    .soMeIcons a img:hover {
+        transform: scale(1.2);
+    }
+}

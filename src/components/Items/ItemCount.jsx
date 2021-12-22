@@ -31,7 +31,7 @@ const ItemCount = ({ stock, onAdd, newDate, date }) => {
                 <button className="button-cart" onClick={onAdd}>Agregar al carrito</button>
                 :
                 <div>
-                    <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip-disabled">Selecciona una fecha</Tooltip>}>
+                    <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip-disabled">Selecciona una fecha</Tooltip>}>
                         <span className="d-inline-block">
                             <button className="button-cart" disabled style={{ pointerEvents: 'none' }}>
                             Agregar al carrito
