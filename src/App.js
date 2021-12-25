@@ -17,7 +17,7 @@ function App() {
       <CartContextProvider>
         <NavBar />
         <Routes>
-          <Route exact path="/unlugardepelicula" element={<Home greeting="Descubre donde se filmaron tus peliculas y series favoritas!" />} />
+          <Route exact path="/unlugardepelicula" element={<Home />} />
           <Route exact path="/tours" element={<Tours />} />
           <Route exact path="/categorias/:idCategoria" element={<Tours />} />
           <Route exact path="/detalle/:idTour" element={<ItemDetailContainer />} />

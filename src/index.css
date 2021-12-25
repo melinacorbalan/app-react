@@ -69,7 +69,6 @@ header {
 
 .cart-icon {
   width: 1.5rem;
-  background-color: black;
 }
 
 .badge {
@@ -731,6 +730,48 @@ header {
   gap: 0.5rem;
 }
 
+/* FOOTER */
+
+.footer {
+  background-color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  grid-area: footer;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: white;
+}
+
+.footer p a {
+  color: salmon !important;
+  text-decoration: none;
+}
+
+.soMeIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.somMeIcons a {
+  text-decoration: none;
+}
+
+.soMeIcons a img {
+  width: 1.3rem;
+  margin: 0 5px;
+}
+
 
 @media only screen and (min-width: 576px) {
 
@@ -841,6 +882,20 @@ header {
 
   .card-details input {
     margin-bottom: 0.5rem;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    height: 120px;
+  }
+
+  .footer p {
+    font-size: 15px;
+  }
+
+  .soMeIcons a img {
+    width: 2rem;
   }
 
 }
@@ -1158,6 +1213,10 @@ header {
   .btn-finish {
     width: fit-content;
     align-self: flex-end;
+  }
+
+  .soMeIcons a img:hover {
+    transform: scale(1.2);
   }
 
 }

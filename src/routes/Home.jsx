@@ -3,13 +3,13 @@ import Footer from "../components/Footer/Footer"
 
 
 
-const Home = ({ greeting }) => {
+const Home = () => {
 
     return (
 
         <div className="homeContainer">
             <div className="mainHome">
-                <h2 className="mainHomeTitle">{greeting}</h2>
+                <h2 className="mainHomeTitle">Descubre donde se filmaron tus peliculas y series favoritas!</h2>
             </div>
             <Footer />
             <Arrow />

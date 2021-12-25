@@ -68,8 +68,6 @@ const Checkout = () => {
             return { id, nombre, locacion, cantidad }
         })
 
-
-        // Add a new document with a generated id.
         const addOrder = await addDoc(collection(db, "orders"), order)
         setOrderID(addOrder.id)        
     }
