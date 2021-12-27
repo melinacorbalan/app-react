@@ -18,7 +18,7 @@ const Cart = () => {
                         {cartList.map(e =>
                             <div key={e.id} className="carrito-tour">
                                 <div className="detalles-tour">
-                                    <Link to={`/detalle/${e.id}`} className="tour-name">{e.tour.nombre} Tour en {e.tour.locacion}</Link>
+                                    <Link to={`/unlugardepelicula/detalle/${e.id}`} className="tour-name">{e.tour.nombre} Tour en {e.tour.locacion}</Link>
                                     <p className="detail">{e.fecha} {e.tour.horario} ({e.tour.idioma})</p>
                                     <p className="total-tour">{e.cantidad} x tickets = {e.total} EUR</p>
                                 </div>
@@ -31,7 +31,7 @@ const Cart = () => {
                     </div>
                     <section className="confirm-user">
                         <Button variant="secondary" onClick={emptyCart}>Cancelar compra</Button>
-                        <Link to="/checkout">
+                        <Link to="/unlugardepelicula/checkout">
                         <Button variant="danger" id="confirm-cart">Confirmar compra</Button>
                         </Link>
                     </section>
@@ -39,7 +39,7 @@ const Cart = () => {
                 :
                 <div className="empty-cart">
                     <p>No tienes productos en tu carrito 😢</p>
-                    <Link to="/tours">Reservar tour</Link>
+                    <Link to="/unlugardepelicula/tours">Reservar tour</Link>
                 </div>
 
             }

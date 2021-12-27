@@ -18,12 +18,12 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/unlugardepelicula" element={<Home />} />
-          <Route exact path="/tours" element={<Tours />} />
-          <Route exact path="/categorias/:idCategoria" element={<Tours />} />
-          <Route exact path="/detalle/:idTour" element={<ItemDetailContainer />} />
-          <Route exact path="/contact" element={<Contacto />} />
-          <Route exact path="/cart" element={<Cart />} />
-          <Route exact path="/checkout" element={<Checkout />} />
+          <Route exact path="/unlugardepelicula/tours" element={<Tours />} />
+          <Route exact path="/unlugardepelicula/categorias/:idCategoria" element={<Tours />} />
+          <Route exact path="/unlugardepelicula/detalle/:idTour" element={<ItemDetailContainer />} />
+          <Route exact path="/unlugardepelicula/contact" element={<Contacto />} />
+          <Route exact path="/unlugardepelicula/cart" element={<Cart />} />
+          <Route exact path="/unlugardepelicula/checkout" element={<Checkout />} />
         </Routes>
       </CartContextProvider>
 

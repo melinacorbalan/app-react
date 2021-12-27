@@ -7,7 +7,7 @@ import ItemCount from "./ItemCount"
 
 const CartButton = () => {
     return (
-        <Link to="/cart">
+        <Link to="/unlugardepelicula/cart">
             <Button className="button-cart">Finalizar compra</Button>
         </Link>
     )
@@ -65,7 +65,7 @@ const ItemDetail = ({ loading, item }) => {
                                 <CartButton />
                             }
                         </div>
-                        <Link to="/tours" className="back-tours">Ver más tours</Link>
+                        <Link to="/unlugardepelicula/tours" className="back-tours">Ver más tours</Link>
                     </section>
                 </main>
             }
