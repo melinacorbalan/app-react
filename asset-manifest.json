@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/unlugardepelicula/static/css/main.3ed8ae37.chunk.css",
-    "main.js": "/unlugardepelicula/static/js/main.63da577e.chunk.js",
-    "main.js.map": "/unlugardepelicula/static/js/main.63da577e.chunk.js.map",
+    "main.js": "/unlugardepelicula/static/js/main.23298d16.chunk.js",
+    "main.js.map": "/unlugardepelicula/static/js/main.23298d16.chunk.js.map",
     "runtime-main.js": "/unlugardepelicula/static/js/runtime-main.f879e48d.js",
     "runtime-main.js.map": "/unlugardepelicula/static/js/runtime-main.f879e48d.js.map",
     "static/css/2.0a9ec390.chunk.css": "/unlugardepelicula/static/css/2.0a9ec390.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.0a9ec390.chunk.css",
     "static/js/2.65d72929.chunk.js",
     "static/css/main.3ed8ae37.chunk.css",
-    "static/js/main.63da577e.chunk.js"
+    "static/js/main.23298d16.chunk.js"
   ]
 }
