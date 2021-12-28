@@ -22,7 +22,7 @@ npm start
 
 - To Visit App 🖥
 ```sh
-[http://localhost:3000](http://localhost:3000)
+http://localhost:3000
 ```
 
 
