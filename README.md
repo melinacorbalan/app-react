@@ -10,15 +10,12 @@ Este proyecto fue iniciado con [Create React App](https://github.com/facebook/cr
 Clona este repositorio. Necesitarás node y npm instalados globalmente en tu máquina.
 
 - Installation 💻
-#
 npm install
 
 - To Start Server 🔧
-#
 npm start
 
 - To Visit App 🖥
-#
 [http://localhost:3000](http://localhost:3000)
 
 ## Dependencies
