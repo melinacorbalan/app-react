@@ -32,7 +32,6 @@ const Arrow = () => {
 
 
     return (
-        // <img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp}/>
 
         <div>
         {visible && (<img className="arrow-up" src={arrowImg} alt="arrow up" onClick={scrollUp}/>)}
